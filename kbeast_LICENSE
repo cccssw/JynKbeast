@@ -1,0 +1,12 @@
+The kernel rootkit is based on some publicly known backdoors, these are:
+
+- Kernel Key Logger Mercenary
+- THC-VLOGGER
+- http://freeworld.thc.org/papers/LKM_HACKING.html
+- http://commons.oreilly.com/wiki/index.php/Network_Security_Tools/
+  Modifying_and_Hacking_Security_Tools/Fun_with_Linux_Kernel_Modules 
+- Some additional code and modification to work with more recent kernel
+ 
+Our recent development version works for linux kernel 2.6.18 and 2.6.32 or any 
+else.
+All development credits go for IPSECS (c) 2011 http://ipsecs.com

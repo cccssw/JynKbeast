@@ -1,0 +1,46 @@
+execve("/sbin/shutdown", ["shutdown", "r"], [/* 22 vars */]) = 0
+brk(0)                                  = 0x8f22000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=38920, ...}) = 0
+mmap2(NULL, 38920, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7fab000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\340_{\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1611564, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7faa000
+mmap2(0x7a0000, 1328580, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7a0000
+mmap2(0x8df000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13f) = 0x8df000
+mmap2(0x8e2000, 9668, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x8e2000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fa9000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb7fa96c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x8df000, 8192, PROT_READ)     = 0
+mprotect(0x797000, 4096, PROT_READ)     = 0
+munmap(0xb7fab000, 38920)               = 0
+getuid32()                              = 0
+geteuid32()                             = 0
+setuid32(0)                             = 0
+getuid32()                              = 0
+brk(0)                                  = 0x8f22000
+brk(0x8f43000)                          = 0x8f43000
+open("/var/run/shutdown.pid", O_RDONLY) = -1 ENOENT (No such file or directory)
+unlink("/var/run/shutdown.pid")         = -1 ENOENT (No such file or directory)
+umask(022)                              = 022
+open("/var/run/shutdown.pid", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+getpid()                                = 4539
+fstat64(3, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fb4000
+write(3, "4539\n", 5)                   = 5
+close(3)                                = 0
+munmap(0xb7fb4000, 4096)                = 0
+rt_sigaction(SIGQUIT, {0x1, [QUIT], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGCHLD, {0x1, [CHLD], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGHUP, {0x1, [HUP], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGTSTP, {0x1, [TSTP], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGTTIN, {0x1, [TTIN], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGTTOU, {0x1, [TTOU], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, {0x804a210, [], 0}, NULL, 8) = 0
+chdir("/")                              = 0
+write(2, "Usage:\t  shutdown [-akrhHPfnc] ["..., 596) = 596
+exit_group(1)                           = ?

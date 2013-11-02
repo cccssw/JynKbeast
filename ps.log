@@ -1,0 +1,80 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.4  0.1   2068   660 ?        Ss   23:22   0:01 init [3]                             
+root         2  0.0  0.0      0     0 ?        S<   23:22   0:00 [migration/0]
+root         3  0.0  0.0      0     0 ?        SN   23:22   0:00 [ksoftirqd/0]
+root         4  0.0  0.0      0     0 ?        S<   23:22   0:00 [watchdog/0]
+root         5  0.0  0.0      0     0 ?        S<   23:22   0:00 [events/0]
+root         6  0.0  0.0      0     0 ?        S<   23:22   0:00 [khelper]
+root         7  0.0  0.0      0     0 ?        S<   23:22   0:00 [kthread]
+root        10  0.0  0.0      0     0 ?        S<   23:22   0:00 [kblockd/0]
+root        11  0.0  0.0      0     0 ?        S<   23:22   0:00 [kacpid]
+root       177  0.0  0.0      0     0 ?        S<   23:22   0:00 [cqueue/0]
+root       180  0.0  0.0      0     0 ?        S<   23:22   0:00 [khubd]
+root       182  0.0  0.0      0     0 ?        S<   23:22   0:00 [kseriod]
+root       245  0.0  0.0      0     0 ?        S    23:22   0:00 [pdflush]
+root       246  0.0  0.0      0     0 ?        S    23:22   0:00 [pdflush]
+root       247  0.0  0.0      0     0 ?        S<   23:22   0:00 [kswapd0]
+root       248  0.0  0.0      0     0 ?        S<   23:22   0:00 [aio/0]
+root       467  0.0  0.0      0     0 ?        S<   23:22   0:00 [kpsmoused]
+root       496  0.0  0.0      0     0 ?        S<   23:22   0:00 [mpt_poll_0]
+root       497  0.0  0.0      0     0 ?        S<   23:22   0:00 [scsi_eh_0]
+root       500  0.0  0.0      0     0 ?        S<   23:22   0:00 [ata/0]
+root       501  0.0  0.0      0     0 ?        S<   23:22   0:00 [ata_aux]
+root       508  0.0  0.0      0     0 ?        S<   23:22   0:00 [kstriped]
+root       523  0.7  0.0      0     0 ?        S<   23:22   0:02 [kjournald]
+root       554  0.0  0.0      0     0 ?        S<   23:23   0:00 [kauditd]
+root       587  0.2  0.2   2900  1476 ?        S<s  23:23   0:00 /sbin/udevd -d
+root      1503  0.0  0.0      0     0 ?        S<   23:23   0:00 [kgameportd]
+root      2207  0.0  0.0      0     0 ?        S<   23:23   0:00 [kmpathd/0]
+root      2208  0.0  0.0      0     0 ?        S<   23:23   0:00 [kmpath_handlerd]
+root      2235  0.0  0.0      0     0 ?        S<   23:23   0:00 [kjournald]
+root      2720  0.0  0.0      0     0 ?        S<   23:23   0:00 [vmmemctl]
+root      3030  0.0  0.6  36864  3484 ?        Sl   23:23   0:00 /usr/sbin/vmtoolsd
+root      3119  0.0  0.4  10160  2504 ?        Ss   23:23   0:00 cupsd
+root      3137  0.0  0.2  12232  1336 ?        Ss   23:23   0:00 tpvmlpd2
+root      3316  0.0  0.1   2164   516 ?        Ss   23:23   0:00 mcstransd
+root      3556  0.0  0.0   2312   484 ?        Ss   23:23   0:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient-eth0.leases -pf /var/run/dhclient-eth0.pid eth0
+root      3617  0.0  0.1  12540   804 ?        S<sl 23:23   0:00 auditd
+root      3619  0.0  0.1  12076   672 ?        S<sl 23:23   0:00 /sbin/audispd
+root      3641  0.0  1.9  11580  9952 ?        Ss   23:23   0:00 /usr/sbin/restorecond
+root      3655  0.0  0.1   1724   576 ?        Ss   23:23   0:00 syslogd -m 0
+root      3658  0.0  0.0   1676   396 ?        Ss   23:23   0:00 klogd -x
+rpc       3693  0.0  0.1   1812   548 ?        Ss   23:23   0:00 portmap
+root      3724  0.0  0.0      0     0 ?        S<   23:23   0:00 [rpciod/0]
+root      3730  0.0  0.1   1864   740 ?        Ss   23:23   0:00 rpc.statd
+root      3764  0.0  0.1   5524   584 ?        Ss   23:23   0:00 rpc.idmapd
+dbus      3789  0.0  0.2  12992  1052 ?        Ssl  23:23   0:00 dbus-daemon --system
+root      3804  0.0  0.1   2168   816 ?        Ss   23:23   0:00 /usr/sbin/hcid
+root      3808  0.0  0.0   1744   504 ?        Ss   23:23   0:00 /usr/sbin/sdpd
+root      3820  0.0  0.0      0     0 ?        S<   23:23   0:00 [krfcommd]
+root      3867  0.0  0.2  12844  1300 ?        Ssl  23:23   0:00 pcscd
+root      3882  0.0  0.1   1672   532 ?        Ss   23:23   0:00 /usr/sbin/acpid
+68        3901  0.7  0.8   6256  4356 ?        Ss   23:23   0:02 hald
+root      3902  0.0  0.1   3156   984 ?        S    23:23   0:00 hald-runner
+68        3909  0.0  0.1   2016   808 ?        S    23:23   0:00 hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+68        3922  0.0  0.1   2016   796 ?        S    23:23   0:00 hald-addon-keyboard: listening on /dev/input/event0
+root      3931  0.0  0.1   1972   636 ?        S    23:23   0:00 hald-addon-storage: polling /dev/hdc
+root      3953  0.0  0.0   1912   452 ?        Ss   23:23   0:00 /usr/bin/hidd --server
+root      3978  0.0  0.2  27244  1352 ?        Ssl  23:23   0:00 automount
+root      4003  0.0  0.2   7072  1064 ?        Ss   23:23   0:00 /usr/sbin/sshd
+root      4030  0.0  0.3   9304  1688 ?        Ss   23:23   0:00 sendmail: accepting connections
+smmsp     4039  0.0  0.2   8148  1480 ?        Ss   23:23   0:00 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+root      4054  0.0  0.0   1904   364 ?        Ss   23:23   0:00 gpm -m /dev/input/mice -t exps2
+root      4068  0.0  0.2   5288  1180 ?        Ss   23:23   0:00 crond
+xfs       4102  0.0  0.2   3836  1488 ?        Ss   23:23   0:00 xfs -droppriv -daemon
+root      4129  0.0  0.0   2272   440 ?        Ss   23:23   0:00 /usr/sbin/atd
+avahi     4157  0.0  0.2   2592  1336 ?        Ss   23:23   0:00 avahi-daemon: running [localhost.local]
+avahi     4158  0.0  0.0   2592   312 ?        Ss   23:23   0:00 avahi-daemon: chroot helper
+root      4189  0.0  0.0   3512   432 ?        S    23:23   0:00 /usr/sbin/smartd -q never
+root      4193  0.0  0.0   1660   420 tty1     Ss+  23:23   0:00 /sbin/mingetty tty1
+root      4194  0.0  0.0   1660   420 tty2     Ss+  23:23   0:00 /sbin/mingetty tty2
+root      4195  0.0  0.0   1660   420 tty3     Ss+  23:23   0:00 /sbin/mingetty tty3
+root      4196  0.0  0.0   1660   416 tty4     Ss+  23:23   0:00 /sbin/mingetty tty4
+root      4209  0.0  0.0   1660   420 tty5     Ss+  23:23   0:00 /sbin/mingetty tty5
+root      4210  0.0  0.0   1660   424 tty6     Ss+  23:23   0:00 /sbin/mingetty tty6
+root      4250  0.0  1.9  25676 10248 ?        SN   23:23   0:00 /usr/bin/python -tt /usr/sbin/yum-updatesd
+root      4252  0.0  0.2   2556  1056 ?        SN   23:23   0:00 /usr/libexec/gam_server
+root      4253  0.0  0.5  10084  2908 ?        Ss   23:24   0:00 sshd: root@pts/0 
+root      4255  0.0  0.2   4536  1408 pts/0    Ss   23:24   0:00 -bash
+root      4521  0.1  0.1  12456   852 ?        S    23:28   0:00 tpvmlpd2
+root      4525  0.0  0.1   4276   964 pts/0    R+   23:28   0:00 ps axu

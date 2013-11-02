@@ -1,0 +1,239 @@
+execve("/sbin/reboot", ["reboot"], [/* 23 vars */]) = 0
+brk(0)                                  = 0x8ef1000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=38920, ...}) = 0
+mmap2(NULL, 38920, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7f6d000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\340_{\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1611564, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7f6c000
+mmap2(0x7a0000, 1328580, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7a0000
+mmap2(0x8df000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13f) = 0x8df000
+mmap2(0x8e2000, 9668, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x8e2000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7f6b000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb7f6b6c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x8df000, 8192, PROT_READ)     = 0
+mprotect(0x797000, 4096, PROT_READ)     = 0
+munmap(0xb7f6d000, 38920)               = 0
+geteuid32()                             = 0
+chdir("/")                              = 0
+access("/var/run/utmpx", F_OK)          = -1 ENOENT (No such file or directory)
+open("/var/run/utmp", O_RDONLY|O_LARGEFILE) = 3
+fcntl64(3, F_GETFD)                     = 0
+fcntl64(3, F_SETFD, FD_CLOEXEC)         = 0
+_llseek(3, 0, [0], SEEK_SET)            = 0
+brk(0)                                  = 0x8ef1000
+brk(0x8f12000)                          = 0x8f12000
+alarm(0)                                = 0
+rt_sigaction(SIGALRM, {0x8a58a0, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+alarm(1)                                = 0
+fcntl64(3, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=0, len=0}) = 0
+read(3, "\10\0\0\0\f\2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 384) = 384
+fcntl64(3, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=0, len=0}) = 0
+alarm(0)                                = 1
+rt_sigaction(SIGALRM, {SIG_DFL, [], 0}, NULL, 8) = 0
+alarm(0)                                = 0
+rt_sigaction(SIGALRM, {0x8a58a0, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+alarm(1)                                = 0
+fcntl64(3, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=0, len=0}) = 0
+read(3, "\2\0\0\0\0\0\0\0~\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 384) = 384
+fcntl64(3, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=0, len=0}) = 0
+alarm(0)                                = 1
+rt_sigaction(SIGALRM, {SIG_DFL, [], 0}, NULL, 8) = 0
+alarm(0)                                = 0
+rt_sigaction(SIGALRM, {0x8a58a0, [], 0}, {SIG_DFL, [], 0}, 8) = 0
+alarm(1)                                = 0
+fcntl64(3, F_SETLKW, {type=F_RDLCK, whence=SEEK_SET, start=0, len=0}) = 0
+read(3, "\1\0\0\0003N\0\0~\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 384) = 384
+fcntl64(3, F_SETLKW, {type=F_UNLCK, whence=SEEK_SET, start=0, len=0}) = 0
+alarm(0)                                = 1
+rt_sigaction(SIGALRM, {SIG_DFL, [], 0}, NULL, 8) = 0
+open("/halt", O_RDWR|O_CREAT, 0644)     = 4
+close(4)                                = 0
+execve("/sbin/shutdown", ["shutdown", "-r", "now"], [/* 23 vars */]) = 0
+brk(0)                                  = 0x8e9f000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=38920, ...}) = 0
+mmap2(NULL, 38920, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7fce000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\340_{\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1611564, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fcd000
+mmap2(0x7a0000, 1328580, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7a0000
+mmap2(0x8df000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13f) = 0x8df000
+mmap2(0x8e2000, 9668, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x8e2000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fcc000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb7fcc6c0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x8df000, 8192, PROT_READ)     = 0
+mprotect(0x797000, 4096, PROT_READ)     = 0
+munmap(0xb7fce000, 38920)               = 0
+getuid32()                              = 0
+geteuid32()                             = 0
+setuid32(0)                             = 0
+getuid32()                              = 0
+brk(0)                                  = 0x8e9f000
+brk(0x8ec0000)                          = 0x8ec0000
+open("/var/run/shutdown.pid", O_RDONLY) = -1 ENOENT (No such file or directory)
+unlink("/var/run/shutdown.pid")         = -1 ENOENT (No such file or directory)
+umask(022)                              = 022
+open("/var/run/shutdown.pid", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+getpid()                                = 10446
+fstat64(3, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fd7000
+write(3, "10446\n", 6)                  = 6
+close(3)                                = 0
+munmap(0xb7fd7000, 4096)                = 0
+rt_sigaction(SIGQUIT, {0x1, [QUIT], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGCHLD, {0x1, [CHLD], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGHUP, {0x1, [HUP], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGTSTP, {0x1, [TSTP], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGTTIN, {0x1, [TTIN], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGTTOU, {0x1, [TTOU], SA_RESTART}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, {0x804a210, [], 0}, NULL, 8) = 0
+chdir("/")                              = 0
+getuid32()                              = 0
+socket(PF_FILE, SOCK_STREAM, 0)         = 3
+fcntl64(3, F_SETFL, O_RDWR|O_NONBLOCK)  = 0
+connect(3, {sa_family=AF_FILE, path="/var/run/nscd/socket"...}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(PF_FILE, SOCK_STREAM, 0)         = 3
+fcntl64(3, F_SETFL, O_RDWR|O_NONBLOCK)  = 0
+connect(3, {sa_family=AF_FILE, path="/var/run/nscd/socket"...}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+open("/etc/nsswitch.conf", O_RDONLY)    = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=1696, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fd7000
+read(3, "#\n# /etc/nsswitch.conf\n#\n# An ex"..., 4096) = 1696
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+munmap(0xb7fd7000, 4096)                = 0
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=38920, ...}) = 0
+mmap2(NULL, 38920, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7fce000
+close(3)                                = 0
+open("/lib/libnss_files.so.2", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\300\30\0\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=46680, ...}) = 0
+mmap2(NULL, 41616, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x3b8000
+mmap2(0x3c1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8) = 0x3c1000
+close(3)                                = 0
+mprotect(0x3c1000, 4096, PROT_READ)     = 0
+munmap(0xb7fce000, 38920)               = 0
+open("/etc/passwd", O_RDONLY)           = 3
+fcntl64(3, F_GETFD)                     = 0
+fcntl64(3, F_SETFD, FD_CLOEXEC)         = 0
+fstat64(3, {st_mode=S_IFREG|0644, st_size=1640, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fd7000
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 1640
+close(3)                                = 0
+munmap(0xb7fd7000, 4096)                = 0
+ioctl(0, SNDCTL_TMR_TIMEBASE or TCGETS, {B38400 opost isig icanon echo ...}) = 0
+readlink("/proc/self/fd/0", "/dev/pts/0"..., 4095) = 10
+time(NULL)                              = 1326638174
+open("/etc/localtime", O_RDONLY)        = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=2819, ...}) = 0
+fstat64(3, {st_mode=S_IFREG|0644, st_size=2819, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fd7000
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\0"..., 4096) = 2819
+close(3)                                = 0
+munmap(0xb7fd7000, 4096)                = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xb7fcc708) = 10447
+time(NULL)                              = 1326638174
+stat64("/etc/localtime", {st_mode=S_IFREG|0644, st_size=2819, ...}) = 0
+stat64("/etc/localtime", {st_mode=S_IFREG|0644, st_size=2819, ...}) = 0
+stat64("/etc/localtime", {st_mode=S_IFREG|0644, st_size=2819, ...}) = 0
+socket(PF_FILE, SOCK_DGRAM, 0)          = 3
+fcntl64(3, F_SETFD, FD_CLOEXEC)         = 0
+connect(3, {sa_family=AF_FILE, path="/dev/log"...}, 110) = 0
+send(3, "<13>Jan 15 06:36:14 shutdown[104"..., 68, MSG_NOSIGNAL) = 68
+close(3)                                = 0
+unlink("/var/run/shutdown.pid")         = 0
+unlink("/etc/nologin")                  = -1 ENOENT (No such file or directory)
+sync()                                  = 0
+rt_sigaction(SIGALRM, {0x8049900, [], 0}, NULL, 8) = 0
+alarm(3)                                = 0
+open("/dev/initctl", O_WRONLY)          = 3
+write(3, "i\31\t\3\6\0\0\0\0\0\0\0\0\0\0\0INIT_HALT\0\0\0\0\0\0\0"..., 384) = 384
+close(3)                                = 0
+alarm(0)                                = 3
+execve("/sbin/init", ["/sbin/init", "6"], [/* 23 vars */]) = 0
+brk(0)                                  = 0x8b15000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=38920, ...}) = 0
+mmap2(NULL, 38920, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7fd5000
+close(3)                                = 0
+open("/lib/libsepol.so.1", O_RDONLY)    = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0@\277\226\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=245376, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fd4000
+mmap2(0x969000, 285024, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x969000
+mmap2(0x9a4000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3b) = 0x9a4000
+mmap2(0x9a5000, 39264, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x9a5000
+close(3)                                = 0
+open("/lib/libselinux.so.1", O_RDONLY)  = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\240%\225\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=93508, ...}) = 0
+mmap2(0x94f000, 97120, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x94f000
+mmap2(0x965000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15) = 0x965000
+close(3)                                = 0
+open("/lib/libc.so.6", O_RDONLY)        = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\340_{\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1611564, ...}) = 0
+mmap2(0x7a0000, 1328580, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7a0000
+mmap2(0x8df000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13f) = 0x8df000
+mmap2(0x8e2000, 9668, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x8e2000
+close(3)                                = 0
+open("/lib/libdl.so.2", O_RDONLY)       = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0Pz\216\0004\0\0\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=16428, ...}) = 0
+mmap2(0x8e7000, 12408, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x8e7000
+mmap2(0x8e9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1) = 0x8e9000
+close(3)                                = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fd3000
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb7fd38e0, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+mprotect(0x8df000, 8192, PROT_READ)     = 0
+mprotect(0x8e9000, 4096, PROT_READ)     = 0
+mprotect(0x797000, 4096, PROT_READ)     = 0
+munmap(0xb7fd5000, 38920)               = 0
+access("/etc/selinux/", F_OK)           = 0
+brk(0)                                  = 0x8b15000
+brk(0x8b36000)                          = 0x8b36000
+open("/etc/selinux/config", O_RDONLY|O_LARGEFILE) = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=448, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fde000
+read(3, "# This file controls the state o"..., 4096) = 448
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+munmap(0xb7fde000, 4096)                = 0
+open("/proc/mounts", O_RDONLY|O_LARGEFILE) = 3
+fstat64(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+mmap2(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7fde000
+read(3, "rootfs / rootfs rw 0 0\n/dev/root"..., 4096) = 657
+close(3)                                = 0
+munmap(0xb7fde000, 4096)                = 0
+open("/selinux/mls", O_RDONLY|O_LARGEFILE) = 3
+read(3, "1", 19)                        = 1
+close(3)                                = 0
+socket(PF_FILE, SOCK_STREAM, 0)         = 3
+connect(3, {sa_family=AF_FILE, path="/var/run/setrans/.setrans-unix"...}, 110) = 0
+sendmsg(3, {msg_name(0)=NULL, msg_iov(5)=[{"\1\0\0\0", 4}, {"\1\0\0\0", 4}, {"\1\0\0\0", 4}, {"\0", 1}, {"\0", 1}], msg_controllen=0, msg_flags=0}, MSG_NOSIGNAL) = 14
+readv(3, [{"\1\0\0\0", 4}, {"\1\0\0\0", 4}, {"\0\0\0\0", 4}], 3) = 12
+readv(3, [{"\0", 1}], 1)                = 1
+close(3)                                = 0
+umask(022)                              = 022
+geteuid32()                             = 0
+getpid()                                = 10446
+rt_sigaction(SIGALRM, {0x8049900, [], 0}, NULL, 8) = 0
+alarm(3)                                = 0
+open("/dev/initctl", O_WRONLY)          = 3
+write(3, "i\31\t\3\1\0\0\0006\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 384) = 384
+close(3)                                = 0
+alarm(0)                                = 3
+exit_group(0)                           = ?

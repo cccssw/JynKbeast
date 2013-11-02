@@ -1,0 +1,88 @@
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_read’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:632: warning: label ‘END’ defined but not used
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:376: warning: unused variable ‘date_time’
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:375: warning: unused variable ‘i’
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:380: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_write’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:648: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_getdents64’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:710: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:730: warning: ignoring return value of ‘copy_to_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_unlink’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:743: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_rmdir’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:758: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_unlinkat’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:772: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_rename’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:787: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:788: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘writeInit’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:835: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:864: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘delInit’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:944: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:947: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_delete_module’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:998: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘my_reboot’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1011: warning: no return statement in function returning non-void
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘my_signal’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1016: warning: no return statement in function returning non-void
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘writePreload’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1061: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘isPreExist’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1104: error: ‘error’ undeclared (first use in this function)
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1104: error: (Each undeclared identifier is reported only once
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1104: error: for each function it appears in.)
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘delPreload’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1169: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1178: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_open’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1228: warning: ignoring return value of ‘copy_from_user’, declared with attribute warn_unused_result
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘h4x_execve’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1283: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘init’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1340: warning: ISO C90 forbids mixed declarations and code
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1347: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1351: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1356: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1357: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1361: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1362: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1363: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1364: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1365: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1366: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1367: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1368: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1369: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1370: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1371: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1372: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1373: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1374: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1376: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1377: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1380: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1396: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1397: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1398: warning: assignment makes pointer from integer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1399: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c: In function ‘exit’:
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1424: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1427: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1431: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1435: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1436: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1437: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1438: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1439: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1440: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1441: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1442: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1449: warning: assignment makes integer from pointer without a cast
+/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.c:1450: warning: assignment makes integer from pointer without a cast
+make[2]: *** [/mnt/hgfs/work_virtual/JynKbeast/dnsmodule.o] Error 1
+make[1]: *** [_module_/mnt/hgfs/work_virtual/JynKbeast] Error 2
+make: *** [all] Error 2

